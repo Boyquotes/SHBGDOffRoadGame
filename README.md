@@ -1,5 +1,5 @@
 # GDGMFFRD
- 
+
 GDGMFFRD adalah game off-road dengan Godot Engine.
 
 Untuk mendownloadnya, kunjungi bagian Releases.
@@ -10,11 +10,11 @@ Untuk mendownloadnya, kunjungi bagian Releases.
 
 ## Screenshot
 
-![ScreenShot](https://github.com/shbfrlnc/GDGMFFRD/blob/main/assets/GDGMFFRD4.png)
+![ScreenShot](assets/GDGMFFRD4.png?raw=true)
 
-![ScreenShot](https://github.com/shbfrlnc/GDGMFFRD/blob/main/assets/GDGMFFRD7.png)
+![ScreenShot](assets/GDGMFFRD7.png?raw=true)
 
-![ScreenShot](https://github.com/shbfrlnc/GDGMFFRD/blob/main/assets/GDGMFFRD8.png)
+![ScreenShot](assets/GDGMFFRD8.png?raw=true)
 
 ## Info Tambahan
 
