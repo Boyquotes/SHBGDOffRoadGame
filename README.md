@@ -1,8 +1,12 @@
 # GDGMFFRD
 
-GDGMFFRD adalah game off-road dengan Godot Engine.
+## Download
 
-Untuk mendownloadnya, kunjungi bagian Releases.
+Download the projects on release page.
+
+## Intro
+
+GDGMFFRD is Godot Engine Off-Road Game.
 
 ## Screencast
 
