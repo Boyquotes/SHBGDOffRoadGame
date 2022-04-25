@@ -4,6 +4,12 @@
 
 Download the projects on release page.
 
+## More Info
+
+Support me, my youtube channel, etc:
+
+- https://shbfrlnc.github.io
+
 ## Intro
 
 GDGMFFRD is Godot Engine Off-Road Game.
@@ -19,9 +25,3 @@ GDGMFFRD is Godot Engine Off-Road Game.
 ![ScreenShot](assets/GDGMFFRD7.png?raw=true)
 
 ![ScreenShot](assets/GDGMFFRD8.png?raw=true)
-
-## Info Tambahan
-
-Traktir Saya, Channel YouTube Saya, dan lain-lain:
-
-- https://sociabuzz.com/lsfkrshb
