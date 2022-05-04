@@ -2,17 +2,17 @@
 
 ## Download
 
-Download the projects on release page.
+Untuk mendownloadnya, kunjungi halaman Releases.
 
-## More Info
+## Info Lebih Lanjut
 
-Support me, my youtube channel, etc:
+TRAKTIR / WEBSITE / YOUTUBE / TWITTER:
 
 - https://shbfrlnc.github.io
 
 ## Intro
 
-GDGMFFRD is Godot Engine Off-Road Game.
+GDGMFFRD adalah Godot Engine Off-Road Game.
 
 ## Screencast
 
