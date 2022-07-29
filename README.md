@@ -4,12 +4,6 @@
 
 Untuk mendownloadnya, kunjungi halaman Releases.
 
-## Info Lebih Lanjut
-
-WEBSITE:
-
-- https://shbfrlnc.github.io
-
 ## Intro
 
 GDGMFFRD adalah Godot Engine Off-Road Game.
