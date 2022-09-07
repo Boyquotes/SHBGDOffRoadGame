@@ -102,7 +102,6 @@ shape = SubResource( 7 )
 
 [node name="Body" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="VehicleWheelFL" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46448, -0.709855, -1.49013 )
@@ -118,7 +117,6 @@ script = ExtResource( 7 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelFL"]
 mesh = SubResource( 3 )
-material/0 = null
 
 [node name="VehicleWheelRL" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46448, -0.709855, 1.76469 )
@@ -133,7 +131,6 @@ script = ExtResource( 7 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelRL"]
 mesh = SubResource( 4 )
-material/0 = null
 
 [node name="VehicleWheelFR" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46145, -0.709855, -1.49013 )
@@ -150,7 +147,6 @@ script = ExtResource( 7 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelFR"]
 mesh = SubResource( 5 )
-material/0 = null
 
 [node name="VehicleWheelRR" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46145, -0.709855, 1.76469 )
@@ -165,4 +161,3 @@ script = ExtResource( 7 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelRR"]
 mesh = SubResource( 6 )
-material/0 = null

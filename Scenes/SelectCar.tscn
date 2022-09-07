@@ -7,9 +7,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 car_sprite_name = [ "Car001", "Car002", "Car003", "Car004" ]
 
 [node name="Label" type="Label" parent="."]
