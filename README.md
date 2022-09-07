@@ -6,11 +6,11 @@ GDGMFFRD adalah Godot Engine Off-Road Game.
 
 ## Screenshot
 
-![ScreenShot](.readme-assets/GDGMFFRD4.png?raw=true)
+![ScreenShot](.readme-assets/GDGMFFRD-1.png?raw=true)
 
-![ScreenShot](.readme-assets/GDGMFFRD7.png?raw=true)
+![ScreenShot](.readme-assets/GDGMFFRD-2.png?raw=true)
 
-![ScreenShot](.readme-assets/GDGMFFRD8.png?raw=true)
+![ScreenShot](.readme-assets/GDGMFFRD-3.png?raw=true)
 
 ## Cara Mencoba Kode Ini
 
