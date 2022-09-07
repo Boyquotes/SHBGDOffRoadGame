@@ -14,7 +14,7 @@ GDGMFFRD adalah Godot Engine Off-Road Game.
 
 ## Cara Mencoba Kode Ini
 
-Untuk mencoba kode ini, Anda memerlukan Godot Engine v3.4.
+Untuk mencoba kode ini, Anda memerlukan Godot Engine v3.5.
 
 Download dan install software tersebut.
 
