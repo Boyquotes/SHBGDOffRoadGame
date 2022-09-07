@@ -1,18 +1,34 @@
+# script ini untuk meningkatkan kualitas gerakan roda mobil (VehicleWheel),
+# terutama saat roda menempel pada obstacle seperti batu (dalam game off road),
+# jadi script ini harus ditempelkan ke VehicleWheel.
+
+# diturunkan dari VehicleWheel.
 extends VehicleWheel
 
+# jumlah raycast.
 export var raycast_count = 10
+
+# offset radius roda.
 export var wheel_radius_offset = 0.07
+
+# faktor waktu pergerakan (untuk lerp).
 export var movement_time_factor = 20.0
+
+# metoda posisi atau impulse?
 enum VBCAR_MOVE_METHOD { position, impulse }
 export(VBCAR_MOVE_METHOD) var move_method = VBCAR_MOVE_METHOD.position
 
+# referensi ke wheel mesh node.
 onready var wheel_mesh = get_node("Wheel")
 
 var force_applied = 0.0
 # var last_contact_pos = Vector3()
+
+# saat ready.
 func _ready():
 	pass
-	
+
+# tiap frame fisika.
 func _physics_process(_delta):
 	if move_method == VBCAR_MOVE_METHOD.position:
 		do_raycast_wheel_pos_method(raycast_count, wheel_radius_offset, _delta)
@@ -37,6 +53,7 @@ func do_raycast_wheel_impulse_method(count, offset, _delta):
 	if contact_positions.size() == 0:
 		return
 		
+	# metoda impulse
 	var average_pos = Vector3()
 	var average_to = Vector3()
 	
@@ -69,7 +86,8 @@ func do_raycast_wheel_pos_method(count, offset, _delta):
 			
 	if contact_positions.size() == 0:
 		return
-		
+	
+	# metoda posisi	
 	var average = Vector3()
 	for item in contact_positions:
 		average += item

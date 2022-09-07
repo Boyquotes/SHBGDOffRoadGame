@@ -1,3 +1,12 @@
+# script untuk mengendalikan mobil.
+# script ini harus ditempelkan pada VehicleBody.
+# yang perlu Anda ingat, engine_force untuk menjalankan mobil,
+# steering untuk membelokan mobil, dan brake untuk mengerem.
+# ketiga variabel tadi adalah bawaan dari VehicleBody.
+# tugas kita di sini adalah memanipulasi variabel tadi
+# agar mobil berjalan sesuai keinginan kita.
+
+# diturunkan dari VehicleBody.
 extends VehicleBody
 
 export var max_steer_angle = 40
@@ -30,21 +39,26 @@ var real_throttle_value = 0.0
 var is_gear_down_just_pressed = false
 var is_gear_up_just_pressed = false
 
+# saat ready.
 func _ready():
 	wheel_reference = get_node(wheel_reference_path)
 	engine_audio = get_node(engine_audio_path)
 
+# tiap frame.
 func _process(_delta):
 	calculate_gear()
 	update_info(_delta)
 
+# tiap frame fisika.
 func _physics_process(_delta):
 	current_speed = linear_velocity.length()
 	
+	# reset.
 	steer_input_val = 0.0
 	throttle_input_val = 0.0
 	brake_input_val = 0.0
 	
+	# tangani input.
 	if Input.is_action_pressed("forward"):
 		throttle_input_val = 1.0
 	if Input.is_action_pressed("brake"):
@@ -56,6 +70,7 @@ func _physics_process(_delta):
 	is_gear_down_just_pressed = Input.is_action_just_pressed("gear-down")
 	is_gear_up_just_pressed = Input.is_action_just_pressed("gear-up")
 	
+	# calculate.
 	real_throttle_value = lerp(real_throttle_value, throttle_input_val, 5.0 * _delta)
 	
 	calculate_engine_force()
@@ -66,7 +81,11 @@ func _physics_process(_delta):
 	current_kph = current_speed * 5.79364
 	
 	calculate_steering(_delta)
-	
+
+# untuk mengatur engine force VehicleBody.
+# silakan baca kodenya dan pahami.
+# tidak ada aturan baku di method ini, Anda bebas berkreasi. 
+# yang penting mobilnya jalan sesuai keinginan.
 func calculate_engine_force():
 	var wheel_rotation_speed = 30.0 * current_speed / (PI * wheel_reference.wheel_radius)
 	var neutral_rpm = real_throttle_value * max_engine_rpm
@@ -103,37 +122,45 @@ func calculate_engine_force():
 		engine_force = calculated_engine_force
 		return
 
+# untuk mengatur brake VehicleBody.
 func calculate_brake():
 	if brake_input_val > 0.0:
 		engine_force = 0.0
 		
 	brake = brake_input_val * max_brake_force
-	
+
+# efek suara mesin.
 func calculate_audio():	
 	engine_audio.pitch_scale = 1.0 + calculated_rpm_factor * 4.0
-	
+
+# untuk mengatur steering VehicleBody.
 func calculate_steering(_delta):
 	steering = lerp(steering, steer_input_val * deg2rad(max_steer_angle), 5.0 * _delta)
 
+# gear turun.
 func gear_down():
 	if current_gear > -1:
 		current_gear = current_gear - 1
 		yield(get_tree().create_timer(gear_changing_time),"timeout")
-	
+
+# gear naik.
 func gear_up():
 	if current_gear < forward_gear_ratios.size():
 		current_gear = current_gear + 1
 		yield(get_tree().create_timer(gear_changing_time),"timeout")
 
+# kopling diinjak.
 func press_clutch():
 	clutch_factor = 0.0
-	
+
+# kopling dilepas.
 func release_clutch():
 	clutch_factor = 1.0
 	
 func update_info(_delta):
 	pass
-	
+
+# simulasi perpindahan gear.
 func calculate_gear():
 	if is_gear_down_just_pressed:
 		press_clutch()
