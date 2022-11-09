@@ -1,5 +1,9 @@
 # SHBGDOffRoadGame - Godot Engine Off-Road Game
 
+## Traktir Saya
+
+Berikan saya uang gratis di https://bit.ly/shb-traktir
+
 ## Software Apakah Ini?
 
 SHBGDOffRoadGame adalah Godot Engine Off-Road Game.
