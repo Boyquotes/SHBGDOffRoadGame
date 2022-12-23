@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Imports/Car004/ReverseLight.material" type="Material" id=1]
 [ext_resource path="res://Imports/Car004/FrontLight.material" type="Material" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scripts/VBCarWheel.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/VBCar.gd" type="Script" id=9]
 [ext_resource path="res://Presets/PowerCurve.tres" type="Curve" id=10]
+[ext_resource path="res://Prefabs/HUD.tscn" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=11]
 extents = Vector3( 2.28257, 1.17723, 5.06961 )
@@ -184,30 +185,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.652607, 0.00458859 )
 shape = SubResource( 11 )
 
 [node name="Body" type="MeshInstance" parent="."]
+use_in_baked_light = true
 mesh = SubResource( 1 )
-material/0 = null
 
 [node name="FrontLight1" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="WheelBackup" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0887971, 0.65831, 3.60547 )
 mesh = SubResource( 7 )
-material/0 = null
 
 [node name="FrontLight2" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.263092, 0 )
 mesh = SubResource( 8 )
-material/0 = null
 
 [node name="BrakeLight" type="MeshInstance" parent="."]
 mesh = SubResource( 9 )
-material/0 = null
 
 [node name="ReverseLight" type="MeshInstance" parent="."]
 mesh = SubResource( 10 )
-material/0 = null
 
 [node name="VehicleWheelFL" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.901, -1.4, -3.18 )
@@ -223,9 +219,9 @@ script = ExtResource( 8 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelFL"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0225701, 0.09354, -0.0515699 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="VehicleWheelRL" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.901, -1.4, 2.8963 )
@@ -240,9 +236,9 @@ script = ExtResource( 8 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelRL"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0225701, 0.09354, 0.0358598 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="VehicleWheelFR" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.901, -1.4, -3.18 )
@@ -259,9 +255,9 @@ script = ExtResource( 8 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelFR"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0399599, 0.09354, -0.0515699 )
+use_in_baked_light = true
 mesh = SubResource( 5 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="VehicleWheelRR" type="VehicleWheel" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.901, -1.4, 2.8963 )
@@ -276,6 +272,11 @@ script = ExtResource( 8 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelRR"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0399599, 0.09354, 0.0358598 )
+use_in_baked_light = true
 mesh = SubResource( 6 )
 skeleton = NodePath("../..")
-material/0 = null
+
+[node name="HUD" parent="." instance=ExtResource( 11 )]
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -12,6 +12,8 @@ export var game_over_scene_path = "res://Scenes/GameOver.tscn"
 # batasan untuk dianggap flip.
 export var game_over_flip_degree = 80
 
+export var flip_time = 5
+
 # untuk collision detection dengan finish.
 export var next_scene_target_group = "player"
 
@@ -19,11 +21,15 @@ export var next_scene_target_group = "player"
 onready var spawn = get_node("Spawn")
 
 # referensi ke mobil player.
-var player_car;
+var player_car
+
+var flip_timer
 
 func _ready():
 	# mulai dengan kursor tersembunyi.
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	# flip_timer = get_tree().create_timer(flip_time)
 	
 	# mobil terpilih.
 	var chosen_car = Globals.chosen_car
@@ -60,6 +66,8 @@ func _process(delta):
 	var try = player_car.transform.basis.y
 	
 	if abs(try.angle_to(Vector3.UP)) > deg2rad(game_over_flip_degree):
+		flip_timer = get_tree().create_timer(flip_time)
+		yield(flip_timer,"timeout")
 		print("flipped")
 		# jika flipped maka game over.
 		get_tree().change_scene(game_over_scene_path)

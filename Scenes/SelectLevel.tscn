@@ -7,10 +7,7 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-level_sprite_name = [ "Level001", "Level002", "Level003" ]
+level_sprite_name = [ "Level001", "Level002", "Level003", "Level004" ]
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5

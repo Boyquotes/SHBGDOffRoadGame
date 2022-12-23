@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Imports/Car001/Wheel.material" type="Material" id=1]
 [ext_resource path="res://Imports/Car001/Body.material" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sounds/Engine002.wav" type="AudioStream" id=5]
 [ext_resource path="res://Presets/PowerCurve.tres" type="Curve" id=6]
 [ext_resource path="res://Scripts/VBCarWheel.gd" type="Script" id=7]
+[ext_resource path="res://Prefabs/HUD.tscn" type="PackedScene" id=8]
 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 1.71089, 1, 2.94413 )
@@ -101,6 +102,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.373444, 0.234488 )
 shape = SubResource( 7 )
 
 [node name="Body" type="MeshInstance" parent="."]
+use_in_baked_light = true
 mesh = SubResource( 2 )
 
 [node name="VehicleWheelFL" type="VehicleWheel" parent="."]
@@ -116,6 +118,7 @@ damping_compression = 0.88
 script = ExtResource( 7 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelFL"]
+use_in_baked_light = true
 mesh = SubResource( 3 )
 
 [node name="VehicleWheelRL" type="VehicleWheel" parent="."]
@@ -130,6 +133,7 @@ damping_compression = 0.88
 script = ExtResource( 7 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelRL"]
+use_in_baked_light = true
 mesh = SubResource( 4 )
 
 [node name="VehicleWheelFR" type="VehicleWheel" parent="."]
@@ -146,6 +150,7 @@ damping_compression = 0.88
 script = ExtResource( 7 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelFR"]
+use_in_baked_light = true
 mesh = SubResource( 5 )
 
 [node name="VehicleWheelRR" type="VehicleWheel" parent="."]
@@ -160,4 +165,7 @@ damping_compression = 0.88
 script = ExtResource( 7 )
 
 [node name="Wheel" type="MeshInstance" parent="VehicleWheelRR"]
+use_in_baked_light = true
 mesh = SubResource( 6 )
+
+[node name="HUD" parent="." instance=ExtResource( 8 )]
