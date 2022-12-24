@@ -19,11 +19,11 @@ extents = Vector3( 35, 20, 1 )
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 116.316, 1, 131.999 )
 
-[sub_resource type="ProceduralSky" id=8]
+[sub_resource type="ProceduralSky" id=10]
 
 [sub_resource type="Environment" id=9]
 background_mode = 2
-background_sky = SubResource( 8 )
+background_sky = SubResource( 10 )
 ambient_light_color = Color( 0.466667, 0.466667, 0.466667, 1 )
 ambient_light_energy = 0.7
 ambient_light_sky_contribution = 0.0
